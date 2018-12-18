@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Expresiones Regulares</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/d8350ebb3a.js"></script>
+  </head>
+  <body>
+    <div class="GeneralAtomics">
+      <div class="Title">
+        <h1>Bienvenua a la presentacion de expresiones regulares</h1>
+      </div>
+      <div class="regex">
+        <img src="img/regex.png" alt="img">
+      </div>
+      <div class="separador">
+      </div>
+      <div class="intro">
+        <p>
+          Luego de varias décadas de investigación se logró desarrollar un poderoso y versátil lenguaje que cualquier computadora puede utilizar para reconocer patrones de texto; este lenguale es lo que hoy en día se conoce con el nombre de expresiones regulares;
+        </p>
+        <p>
+          las operaciones de validación, búsqueda, extracción y sustitución de texto ahora son tareas mucho más sencillas para las computadoras gracias a las expresiones regulares.
+        </p>
+      </div>
+      <div class="separador">
+      </div>
+      <div class="queson">
+        <h2>pero que Ching#$@%$ son</h2>
+        <p>
+          <h3>regex</h3>
+          Las expresiones regulares deberían formar parte del arsenal de cualquier buen programador ya que un gran número de problemas de procesamiento de texto pueden ser fácilmente resueltos con ellas.
+        </p>
+      </div>
+      <div class="separador">
+      </div>
+      <div class="componentes">
+        <h2>Componentes de las Expresiones Regulares</h2>
+        <table class="tabla">
+          <tr>
+            <td>
+              <div class="literales">
+                <h2>Literales</h2>
+                <p>
+                   Una serie de caracteres encuentra esa misma serie en el texto de entrada, por lo tanto la plantilla "raul" encontrará todas las apariciones de "raul" en el texto que procesamos.
+                </p>
+              </div>
+            </td>
+            <td>
+              <div class="secuenciales">
+                <h2>Secuencias de escape</h2>
+                <p>
+                  La sintaxis de las expresiones regulares nos permite utilizar las secuencias de escape que ya conocemos de otros lenguajes de programación
+                  <br>
+                  \n....Nueva línea (new line). El cursor pasa a la primera posición de la línea siguiente.<br>
+                  \t....Tabulador. El cursor pasa a la siguiente posición de tabulación.<br>
+                  \\....Barra diagonal inversa. <br>
+                  \v....Tabulación vertical. <br>
+                  \ooo....Carácter ASCII en notación octal. <br>
+                  \xhh....Carácter ASCII en notación hexadecimal. <br>
+                  \xhhhh....Carácter Unicode en notación hexadecimal.
+                </p>
+
+              </div>
+            </td>
+            <td>
+              <div class="caracteres">
+                <h2>Clases de caracteres</h2>
+                <p>
+                  Se pueden especificar clases de caracteres encerrando una lista de caracteres entre corchetes [], la que que encontrará uno cualquiera de los caracteres de la lista.
+                  <br>
+                       /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/
+                       <br>
+                  / indica el inicio y fin de la expresión regular <br>
+                  ^ inicio del string <br>
+                  $ fin del string <br>
+                  [xyz] denota un conjunto de caracteres <br>
+                  a-z caracteres entre la a minuscula y la z minuscula charcode 97 al 122 <br>
+                  A-Z caracteres entre la A mayúscula y la Z mayúsucla charcode 65 al 90 <br>
+                  À-Ö charcode 192 al 214 <br>
+                  Ø-ö charcode 216 al 246 <br>
+                  ø-ÿ charcode 248 al 255 <br>
+                  + una o mas caracteres
+                </p>
+              </div>
+            </td>
+            <td>
+              <div class="metacaracteres">
+                <h2>Metacaracteres</h2>
+                <p>
+                  Los metacaracteres son caracteres especiales que son la esencia de las expresiones regulares.
+                  <br>
+                  ^....inicio de línea. <br>
+                  $....fin de línea. <br>
+                  \A...inicio de texto. <br>
+                  \Z...fin de texto. <br>
+                  .    cualquier caracter en la línea. <br>
+                  \b...encuentra límite de palabra. <br>
+                  \B...encuentra distinto a límite de palabra.
+                </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <img src="img/ascii.jpeg" alt="">
+      </div>
+
+
+      <div class="separador">
+      </div>
+      <div class="Python">
+        <h2>Expresiones Regulares con Python</h2>
+        <p>
+          la librería estandar de Python podemos encontrar el módulo re, el cual nos proporciona todas las operaciones necesarias para trabajar con las expresiones regulares.
+        </p>
+      </div>
+      <div class="separador">
+      </div>
+      <div class="coincidencias">
+        <h2>Buscando coincidencias</h2>
+        <p>
+          Una vez que hemos importado el módulo, podemos empezar a tratar de buscar coincidencias con un determinado patrón de búsqueda.
+        </p>
+        <p>
+          \t — Representa un tabulador. <br>
+          \r — Representa el "retorno de carro" o "regreso al inicio" o sea el lugar en que la línea vuelve a iniciar. <br>
+          \n — Representa la "nueva línea" el carácter por medio del cual una línea da inicio. <br>
+          \f — Representa un salto de página <br>
+          \v — Representa un tabulador vertical <br>
+          \x — Se utiliza para representar caracteres ASCII o ANSI si conoce su código. De esta forma, si se busca el símbolo de derechos de autor y la fuente en la que se busca utiliza el conjunto de caracteres Latin-1 es posible encontrarlo utilizando "\xA9". <br>
+          \u — Se utiliza para representar caracteres Unicode si se conoce su código. "\u00A2" representa el símbolo de centavos. No todos los motores de Expresiones Regulares soportan Unicode. <br>
+          \d — Representa un dígito del 0 al 9. <br>
+          \w — Representa cualquier carácter alfanumérico (a-z, A-Z, 0-9 o guión bajo). <br>
+          \s — Representa un espacio en blanco. <br>
+          \D — Representa cualquier carácter que no sea un dígito del 0 al 9. <br>
+          \W — Representa cualquier carácter no alfanumérico. <br>
+          \S — Representa cualquier carácter que no sea un espacio en blanco. <br>
+          \A — Representa el inicio de la cadena. No un carácter sino una posición. <br>
+          \Z — Representa el final de la cadena. No un carácter sino una posición. <br>
+          \b — Marca el inicio y el final de una palabra. <br>
+          \B — Marca la posición entre dos caracteres alfanuméricos o dos no-alfanuméricos.
+          Alternación
+        </p>
+        <p>
+          patron = re.compile(r'\bRed Dead Redemption 2\b')  asi busca la palabra Red Dead Redemption 2
+        </p>
+        <p>
+            match(): El cual determinada si la regex tiene coincidencias en el comienzo del texto. <br>
+            search(): El cual escanea todo el texto buscando cualquier ubicación donde haya una coincidencia. <br>
+            findall(): El cual encuentra todos los subtextos donde haya una coincidencia y nos devuelve estas coincidencias como una lista. <br>
+            finditer(): El cual es similar al anterior pero en lugar de devolvernos una lista nos devuelve un iterador. <br>
+            group(): El cual devuelve el texto que coincide con la expresion regular. <br>
+            start(): El cual devuelve la posición inicial de la coincidencia. <br>
+            end(): El cual devuelve la posición final de la coincidencia. <br>
+            span(): El cual devuelve una tupla con la posición inicial y final de la coincidencia.
+
+        </p>
+        <p>
+            Asi mismo se puede validar ya sea: <br>
+            Un correo electrónico <br>
+            Un identificador de java <br>
+            Un identificador de php <br>
+            La fecha <br>
+            Un número real <br>
+            Un entero <br>
+            Una dirección <br>
+            Un teléfono <br>
+            Un nombre
+
+        </p>
+        <br>
+        <p>
+          Ejemplos asi naa mas: <br>
+          texto = """Red Dead Redemption 2 el mejor de todos los Red Dead Redemption de la historia""" <br>
+          print(patron.match(texto)) = none <br>
+          m = patron.match('Red ') = Red span=(0, 3) <br>
+          s = patron.search('Dead') = Dead span=(5, 8) <br>
+          fa = patron.findall('red') = ['Red', 'Red', 'Red'] <br>
+          m.group(), m.start(), m.end(), m.span() = ('Red', 0, 3, (0, 3))<br>
+        </p>
+        <p>
+          Validando mails: <br>
+          \b[\w.+-]+[\w.-]+\.[a-zA-Z].{2,3}\b <br>
+          Validando fechas: <br>
+          ^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[01112])/((19|20)\d\d)$
+        </p>
+      </div>
+      <div class="separador">
+      </div>
+        <section class="contacto">
+          <div class="container">
+            <div class="row text-center espacio-arriba espacio-abajo">
+              <div class="col col-sm-4 col-sm-offset-4">
+                <h4> Derechos de autor: Victor Manuel Florez Taborda</h4>
+                <span>En asociacion con la KPC y el minuto de Dios</span>
+                <hr>
+                <h4>Heil hydra</h4>
+
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+  </body>
+</html>

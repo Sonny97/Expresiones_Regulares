@@ -1,0 +1,39 @@
+body {
+  width: 100%;
+  max-width: 2500px;
+  background-color: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+  -webkit box-sizing: border-box;
+  border: box;
+}
+.separador {
+  height: 150px;
+}
+.GeneralAtomics {
+  width: 100%;
+  max-width: 2500px;
+}
+.Title {
+  padding-top: 50px;
+  text-align: center;
+}
+.tabla {
+  width: 100%;
+}
+td {
+  width: 100px;
+}
+.contacto {
+  color: white;
+  background-image: url('../img/hydra.jpg');
+  text-align: center;
+  font-weight:bold;
+}
+.regex {
+  text-align: center;
+}
+.coincidencias {
+  padding-left: 20px;
+}
